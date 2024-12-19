@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Cours</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+
+<body class="bg-gradient-to-br from-green-100 to-green-300 min-h-screen">
+    <div class="container mx-auto px-4">
+        <header class="mb-10">
+            <nav class="bg-white shadow-lg rounded-lg overflow-hidden py-2 px-4">
+                <div class="flex justify-between flex-row items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-2xl font-bold text-green-700">MyApp</h1>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8 bg-gray-200 rounded-md">
+                        <a href="/" class="text-black hover:text-green-500 px-3 py-2 text-sm font-medium flex items-center">
+                            <i data-feather="home" class="mr-2 h-4 w-4"></i>Home
+                        </a>
+                        <a href="/cours" class="text-black hover:text-green-500 px-3 py-2 text-sm font-medium flex items-center">
+                            <i data-feather="briefcase" class="mr-2 h-4 w-4"></i>Cours
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="bg-white shadow-2xl rounded-xl overflow-hidden">
+            <div class="px-6 py-8">
+                <h2 class="text-3xl font-extrabold text-gray-800 mb-6">Add Cours</h2>
+                <form id="cours-form" method="POST" action="/cours/store">
+                    <div class="mb-4">
+                        <label for="nomCours" class="block text-gray-700 text-sm font-bold mb-2">Nom du Cours:</label>
+                        <input type="text" id="nomCours" name="nomCours" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="module" class="block text-gray-700 text-sm font-bold mb-2">Module:</label>
+                        <select id="module" name="module" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <!-- Modules will be dynamically inserted here -->
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="professeur" class="block text-gray-700 text-sm font-bold mb-2">Professeur:</label>
+                        <select id="professeur" name="professeur" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <!-- Professors will be dynamically inserted here -->
+                        </select>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300 flex items-center">
+                            <i data-feather="plus-circle" class="mr-2 h-4 w-4"></i>Add Cours
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+    <script src="../../js/cours/form.js"></script>
+</body>
+
+</html>
